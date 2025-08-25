@@ -71,15 +71,3 @@
     text-align: center;
     color: var(--color-gray-4);
 }
-
-@media (max-width: 457px) {
-    .todo__total-tasks {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 385px) {
-    .todo__total-tasks {
-        font-size: 11px;
-    }
-}
