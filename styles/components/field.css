@@ -49,3 +49,16 @@
         }
     }
 }
+
+@media (max-width: 391px) {
+    .field {
+        &:has(.field__input:not(:placeholder-shown)) .field__label {
+            scale: 0.9;
+            translate: -1.75em -3.6em;
+        }
+    }
+    .field__label {
+        left: 13px;
+        font-size: 11px;
+    }
+}
