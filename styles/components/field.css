@@ -14,6 +14,7 @@
     left: 17px;
     color: #5b5959;
     translate: 0 -50%;
+    font-size: 16px;
 }
 
 .field__input {
@@ -50,15 +51,21 @@
     }
 }
 
-@media (max-width: 391px) {
-    .field {
-        &:has(.field__input:not(:placeholder-shown)) .field__label {
-            scale: 0.9;
-            translate: -1.75em -3.6em;
-        }
-    }
+@media (max-width: 457px) {
     .field__label {
-        left: 13px;
+        font-size: 13px;
+    }
+    .todo__title {
+        font-size: 20px;
+    }
+}
+@media (max-width: 375px) {
+    .field__label {
         font-size: 11px;
+    }
+}
+@media (max-width: 365px) {
+    .field__label {
+        font-size: 9px;
     }
 }

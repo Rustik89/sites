@@ -17,3 +17,9 @@
         scale: 1.05;
     }
 }
+
+@media (max-width: 457px) {
+    .button {
+        padding: 8px;
+    }
+}
