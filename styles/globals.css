@@ -19,3 +19,8 @@ button {
     outline-offset: 4px;
     transition-duration: 0s !important;
 }
+
+.container {
+    max-width: 996px;
+    margin: 0px auto;
+}

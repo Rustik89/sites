@@ -50,3 +50,9 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    .field__label {
+        font-size: 10px;
+    }
+}

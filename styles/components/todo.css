@@ -3,7 +3,7 @@
     flex-direction: column;
     row-gap: 24px;
     width: 100%;
-    max-width: 404px;
+
     min-height: 430px;
     padding: 24px;
     background-color: #c6b4d3;
@@ -70,4 +70,8 @@
 .todo__empty-message {
     text-align: center;
     color: var(--color-gray-4);
+}
+
+.todo__total-tasks {
+    font-size: 9px;
 }
