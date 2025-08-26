@@ -55,4 +55,14 @@
     .field__label {
         font-size: 10px;
     }
+
+    .field {
+        position: relative;
+
+        &:has(.field__input:not(:placeholder-shown)) .field__label {
+            scale: 0.7;
+            translate: -1.75em -3.6em;
+            color: var(--color-black);
+        }
+    }
 }
