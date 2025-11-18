@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Vue3 Планер задач</title>
+    </head>
+    <body>
+        <div id="app">
+            <section class="section-todo">
+                <div class="container">
+                    <div class="todo-list-column">
+                        <div class="todo-list__header">
+                            <h1 class="main-title">Список задач</h1>
+                            <div action="" class="form">
+                                <input
+                                    type="text"
+                                    placeholder="Введите задачу..."
+                                    v-bind:value="valueInput"
+                                    v-on:input="handlyInput"
+                                    v-on:keydown.enter="addTask"
+
+                                />
+                                <button
+                                  type="button"
+                                  class="btn"
+                                  v-on:click="addTask"
+                                >
+                                    Добавить задачу
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="todo-info">
+                            <div class="wrapper-info">
+                                <h3 class="title">Всего задач:</h3>
+                                <span class="todo-count">{{needDoList.length}}</span>
+                            </div>
+                        </div>
+                        <div class="todo-list-wrapper">
+
+                                <div
+                                    class="todo-tasks"
+                                    v-for="(mask, index) in needDoList"
+                                    :key="mask.id"
+                                >
+                                    <input type="checkbox" v-on:change="doCheck(index, 'need')"/>
+                                    <span>{{mask.title}}</span>
+                                    <button class="remove" v-on:click="removeMask(index, 'need')">Удалить</button>
+                                </div>
+
+                        </div>
+                        <div class="wrapper-info-done">
+                            <h3 class="title">Выполнено задач:</h3>
+                            <span class="todo-count">{{completeList.length}}</span>
+                        </div>
+
+                            <div class="todo-tasks" v-for="(mask, index) in completeList" :key="mask.id">
+                                <input type="checkbox" v-on:change="doCheck(index, 'complete')" checked />
+                                <span>{{mask.title}}</span>
+                                <button class="remove-disabled" v-on:click="removeMask(index, 'complete')">Удалить</button>
+                            </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
